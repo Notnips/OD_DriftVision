@@ -2,14 +2,14 @@
 Drift Vision V2.2 (Stable Edition, New Features)
 Developed & Debugged by Pub | Ayzon
 
-A comprehensive camera system for Orion Drift with robust state management,
-improved keybind tracking, reliable recall functionality, and new third-person mode.
+Camera system for Orion Drift. First and third person views, a grabbable
+extension arm you can push out and pull back in, view flipping, and owner recall.
 Released into the public domain.
 ]]
 
 metadata = {
 	name = "Drift Vision",
-	description = "A comprehensive camera system built for Orion Drift, featuring multiple viewing modes, extension arm functionality, view rotation, and owner-based recall.",
+	description = "Spectator camera for Orion Drift with first/third person, a grabbable extension arm, view flipping, and owner recall.",
 	author = "Pub | Ayzon",
 	defaultKeybind = "",
 }
@@ -917,7 +917,7 @@ function onGui()
         if playerMatchesSearch(players[i].name, searchText) then
             local displayName = players[i].name
             if players[i].id == activePlayerId then
-                displayName = "► " .. displayName
+                displayName = "> " .. displayName
             end
             if players[i].id == config.ownerId then
                 displayName = displayName .. " (Owner)"
@@ -1011,20 +1011,20 @@ function onGui()
     Gui.separator()
 
     Gui.text("== HOW TO USE ==")
-    Gui.text("• Hold TRIGGER near your head for " .. string.format("%.1f", config.grabDelayTime) .. " sec to grab camera")
-    Gui.text("• While holding camera, use GRIP to flip view 180°")
-    Gui.text("• Use opposite hand's TRIGGER to extend camera out")
-    Gui.text("• Use opposite hand's GRIP to pull camera in")
-    Gui.text("• Release camera on your head when:")
-    Gui.text("  - Camera facing you → First Person mode")
-    Gui.text("  - Camera facing away → Third Person mode")
-    Gui.text("• Use trigger near free camera to pick it up")
-    Gui.text("• Drop on another player's head to transfer control")
+    Gui.text("- Hold TRIGGER near your head for " .. string.format("%.1f", config.grabDelayTime) .. " sec to grab camera")
+    Gui.text("- While holding camera, use GRIP to flip view 180°")
+    Gui.text("- Use opposite hand's TRIGGER to extend camera out")
+    Gui.text("- Use opposite hand's GRIP to pull camera in")
+    Gui.text("- Release camera on your head when:")
+    Gui.text("  - Camera facing you -> First Person mode")
+    Gui.text("  - Camera facing away -> Third Person mode")
+    Gui.text("- Use trigger near free camera to pick it up")
+    Gui.text("- Drop on another player's head to transfer control")
 
     if config.ownerId then
         Gui.separator()
         Gui.text("Owner Controls:")
-        Gui.text("• Hold any TRIGGER for " .. string.format("%.1f", config.ownerRecallTime) .. " sec to recall camera")
+        Gui.text("- Hold any TRIGGER for " .. string.format("%.1f", config.ownerRecallTime) .. " sec to recall camera")
     end
 
     Gui.separator()

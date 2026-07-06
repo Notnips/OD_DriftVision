@@ -3,7 +3,7 @@
   "name": "pub.driftvision",
   "displayName": "Drift Vision",
   "version": "2.2.0",
-  "description": "A comprehensive camera system for Orion Drift, featuring multiple viewing modes, extension arm functionality, view rotation, and owner-based recall.",
+  "description": "Spectator camera for Orion Drift with first/third person, a grabbable extension arm, view flipping, and owner recall.",
   "main": "driftvision.luau",
   "keywords": [
     "camera",
