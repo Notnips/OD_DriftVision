@@ -14,9 +14,7 @@ metadata = {
 	defaultKeybind = "",
 }
 
---====================================
---          CONFIGURATION           --
---====================================
+-- configuration
 
 config.viewpointOffset = config.viewpointOffset or Vec3.new(0, 0, 0)
 config.fov = config.fov or 90
@@ -45,9 +43,7 @@ config.extensionStep = config.extensionStep or 10
 config.extensionSmoothness = config.extensionSmoothness or 0.2
 if config.flipEnabled == nil then config.flipEnabled = true end
 
---====================================
---         STATE MANAGEMENT         --
---====================================
+-- state management
 
 local t = 0                            -- Global time counter
 local activePlayerId = nil             -- Currently followed player's ID
@@ -89,9 +85,7 @@ local isLeftGrabAttempt = false
 local initialPovSet = false            -- Flag to mark if initial POV has been forced
 local initialDelay = 0                 -- Short delay counter before forcing POV
 
---====================================
---         INITIALIZATION           --
---====================================
+-- initialization
 
 function updateNameTagsVisibility()
     if not camera then return end
@@ -164,9 +158,7 @@ function onUnload()
     end
 end
 
---====================================
---         PLAYER UTILITIES         --
---====================================
+-- player utilities
 
 function getPlayers()
     local players = {}
@@ -244,9 +236,7 @@ function playerMatchesSearch(playerName, search)
     return string.find(lowerName, lowerSearch) ~= nil
 end
 
---====================================
---      INPUT & HAND UTILITIES      --
---====================================
+-- input & hand utilities
 
 function getHandPosition(player, isLeftHand)
     if not player or not player.root or not player.root.position or not player.root.rotation then return nil, nil end
@@ -306,9 +296,7 @@ function encodeButtonState(stateBits)
     return output
 end
 
---====================================
---         CAMERA CONTROL           --
---====================================
+-- camera control
 
 function flipCameraView()
     facingUser = not facingUser
@@ -445,9 +433,7 @@ function displayOwnerRecallStatus()
     end
 end
 
---====================================
---         HAND-BASED GRAB           --
---====================================
+-- hand-based grab
 
 function beginRightHandGrip(player, handPos, handRot)
     if not player or not handPos or not handRot then return end
@@ -694,9 +680,7 @@ function handleCameraRelease(player)
     return newOwnerFound
 end
 
---====================================
---         MAIN UPDATE LOOP         --
---====================================
+-- main update loop
 
 function tick(dt)
     t = t + dt
@@ -868,9 +852,7 @@ function tick(dt)
     end
 end
 
---====================================
---              UI                  --
---====================================
+-- ui
 
 function onGui()
     Gui.text("DRIFT VISION")
