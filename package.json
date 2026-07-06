@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/AA-Franz/OD_SpectatorRegistry/refs/heads/main/src/package.schema.json",
+  "name": "pub.driftvision",
+  "displayName": "Drift Vision",
+  "version": "2.2.0",
+  "description": "A comprehensive camera system for Orion Drift, featuring multiple viewing modes, extension arm functionality, view rotation, and owner-based recall.",
+  "main": "driftvision.luau",
+  "keywords": [
+    "camera",
+    "spectator",
+    "pov",
+    "third-person",
+    "driftvision"
+  ],
+  "author": "Pub | Ayzon",
+  "defaultKeybind": "",
+  "url": "https://github.com/Notnips/OD_DriftVision.git"
+}
